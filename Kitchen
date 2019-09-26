@@ -1,0 +1,57 @@
+// testing class. Behaviour commands entered here.
+public class Testing {
+
+	public static void main(String[] args) {
+		System.out.println("Hello World");
+		Kettle bradley = new Kettle ("Chrome", "Dunno", 500);
+		Kettle vickie = new Kettle ("Silver", "Not Sure", 500);
+		System.out.println(bradley);
+		bradley.fillup(100);
+		System.out.println(bradley);
+		bradley.pour(50);
+		System.out.println(bradley);
+		System.out.println(vickie);
+	}
+
+}
+
+
+
+// Public class for Kettle. Stores different types of kettles and rules for them.
+public class Kettle {
+	// Stores the color, manufacturer maximum capacity and current capacity.
+	String color;
+	String manufacturer;
+	int maxCapacity;
+	int currentCapacity;
+	
+	public Kettle(String c, String m, int mc) {
+		System.out.println("A New Kettle has been created.");
+		this.color = c;
+		this.manufacturer = m;
+		this.maxCapacity = mc;
+		this.currentCapacity = 0;
+	}
+	// Fill command. The if statement prevents filling over maximum capacity.
+	public void fillup(int amount) {
+		if (currentCapacity+amount <= maxCapacity) {
+		   currentCapacity += amount;
+		
+	    } else {
+	System.out.println("Too much water!");
+	}}
+	
+	public String toString() {
+		return color + " " + manufacturer + " " + currentCapacity + "/" + maxCapacity;		
+	}
+	// Pour command. The if statement stops the pour command from taking away more water than the kettle is holding.
+	public void pour(int amount)  {
+		if (currentCapacity>=50) {
+			currentCapacity -= 50;	
+	    } else {
+		System.out.println("Not enough water for a cup of tea");
+	}
+		
+	}
+}
+
